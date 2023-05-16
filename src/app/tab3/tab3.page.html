@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <h1>
+        <div style="text-align: center;">
+        About Me
+      </div>
+      </h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input label="Name: " [(ngModel)]="Name!" [clearInput]="true" 
+          placeholder="Enter name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Age: " [(ngModel)]="Age!" type="number" [clearInput]="true"
+          placeholder="Enter age (years)"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Weight: " [(ngModel)]="Weight!" type="number" [clearInput]="true"
+          placeholder="Enter weight (years)"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Height: " [(ngModel)]="Height!" type="number" [clearInput]="true"
+          placeholder="Enter height (years)"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-radio-group [(ngModel)]="Gender">
+          <ion-item>
+            <ion-label>Gender</ion-label>
+            <ion-col>
+              Male<ion-radio value="Male"></ion-radio>
+            </ion-col>
+            <ion-col>
+              Femal<ion-radio value="Femal"></ion-radio>
+            </ion-col>
+            <ion-col>
+              Unknow<ion-radio value="Unknow"></ion-radio>
+            </ion-col>
+          </ion-item>
+        </ion-radio-group>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input label="Tel: " [(ngModel)]="Tel!" type="number" [clearInput]="true"
+          placeholder="Enter Phone Number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Address: " [(ngModel)]="Address!" type="string" [clearInput]="true"
+          placeholder="Enter Adress"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="What is your favorite color?: " [(ngModel)]="Color!" placeholder="Enter Color" [clearInput]="true"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="What is your favorite food?: " [(ngModel)]="Food!" placeholder="Enter Food" [clearInput]="true"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Line:</ion-label>
+          <ion-checkbox [(ngModel)]="isInputEnabled1" name="'isInputEnabled1"></ion-checkbox>
+          <ion-input [(ngModel)]="Line!" placeholder="Enter Line" type="text" [disabled]="!isInputEnabled1" [clearInput]="true"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Facebook:</ion-label>
+          <ion-checkbox [(ngModel)]="isInputEnabled2" name="'isInputEnabled2"></ion-checkbox>
+          <ion-input [(ngModel)]="Facebook!" placeholder="ebEnter Facook" type="text" [disabled]="!isInputEnabled2" [clearInput]="true"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Instagram:</ion-label>
+          <ion-checkbox [(ngModel)]="isInputEnabled3" name="'isInputEnabled3"></ion-checkbox>
+          <ion-input [(ngModel)]="Instagram!" placeholder="Enter Instagram" type="text" [disabled]="!isInputEnabled3" [clearInput]="true"></ion-input>
+          
+        </ion-item> 
+        
+      
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div style="text-align: center;">
+        <ion-checkbox [(ngModel)]="isInputEnabled4" name="'isInputEnabled4"></ion-checkbox>
+        <ion-label> I'm not A Robot</ion-label>
+      </div>
+     </ion-col>
+  </ion-row>
+  <div style="text-align: center;">
+    
+    <ion-icon name="person-add-outline"></ion-icon>
+  <ion-button name="person-add-outline" id="present-alert" [disabled]="!isInputEnabled4">Save</ion-button>
+  <ion-button name="person-add-outline" [disabled]="!isInputEnabled4" [routerLink]="'/tabs/tab1'">BMI</ion-button>
+  <ion-button name="person-add-outline" [disabled]="!isInputEnabled4" [routerLink]="'/tabs/tab2'">BMR</ion-button>
+    
+
+<ion-alert
+
+  trigger="present-alert"
+  header="บันทึกข้อมูลใช่หรือไม่"
+  [buttons]="alertButtons"
+  
+></ion-alert>
+<p>{{ handlerMessage }}</p>
+
+</div>
+
+
+
+
+  </ion-grid>
+
+ 
+</ion-content>
